@@ -1,0 +1,6 @@
+// Los logs de mensajes y errores del backend aparecerán aquí.
+// Puedes escribir en este archivo desde server.js usando fs.appendFileSync o fs.writeFileSync.
+// Ejemplo de línea de log:
+// [2024-06-10T12:34:56.789Z] Mensaje recibido: {"nombre":"Juan","telefono":"123456789","email":"juan@mail.com","mensaje":"Hola"}
+//
+// [2024-06-10T12:35:01.123Z] Error: Error de conexión a MongoDB: ...

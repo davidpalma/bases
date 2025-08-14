@@ -1,16 +1,61 @@
-# Bases
+# Contact Form Application
+
+Angular contact form application with Express.js backend, MongoDB database, and email notifications.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
 
-## Development server
+## Prerequisites
 
-To start a local development server, run:
+- Node.js (v18 or higher)
+- MongoDB installed and running
+- NPM or Yarn
 
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
 ```bash
-ng serve
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Environment Setup
+
+1. Copy the environment example file:
+```bash
+copy .env.example .env
+```
+
+2. Edit the `.env` file and configure your settings:
+```
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_gmail_app_password
+EMAIL_TO=recipient@example.com
+MONGODB_URI=mongodb://localhost:27017/contactdb
+PORT=3000
+```
+
+## Running the Application
+
+### Start MongoDB
+Make sure MongoDB is running:
+```bash
+# MongoDB should be running as a Windows service
+# Check status: Get-Service -Name "MongoDB"
+```
+
+### Start the Backend Server
+In one terminal:
+```bash
+npm run server
+```
+
+### Start the Angular Development Server
+In another terminal:
+```bash
+npm start
+```
+
+Once the servers are running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding
 
@@ -53,6 +98,57 @@ ng e2e
 ```
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Features
+
+- ✅ Angular 20 with standalone components
+- ✅ Reactive forms with validation
+- ✅ Express.js REST API
+- ✅ MongoDB database integration
+- ✅ Email notifications via Nodemailer
+- ✅ CORS enabled
+- ✅ Environment variables for security
+- ✅ Proxy configuration for development
+
+## API Endpoints
+
+- `POST /api/contact` - Submit a contact message
+- `GET /api/contact` - Retrieve all contact messages
+
+## Scripts
+
+- `npm start` - Start Angular dev server with proxy
+- `npm run build` - Build Angular application
+- `npm run server` - Start Express.js backend server
+- `npm test` - Run tests
+
+## Project Structure
+
+```
+├── src/                    # Angular application
+│   ├── app/
+│   │   ├── contact-form/   # Contact form component
+│   │   └── ...
+├── backend/                # Express.js server
+│   ├── server.js          # Main server file
+│   └── ...
+├── proxy.conf.json        # Angular proxy configuration
+├── .env.example          # Environment variables example
+└── package.json
+```
+
+## Security Notes
+
+- Never commit the `.env` file to version control
+- Use Gmail App Passwords instead of your regular password
+- The `.env.example` file shows the required environment variables
+
+## Troubleshooting
+
+1. **MongoDB Connection Issues**: Ensure MongoDB is running and accessible
+2. **Email Issues**: Verify Gmail App Password and sender email configuration  
+3. **Build Errors**: Run `npm install` to ensure all dependencies are installed
+4. **Proxy Issues**: Make sure the backend server is running on port 3000
 
 ## Additional Resources
 

@@ -1,0 +1,25 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" style="max-width:400px;margin:auto;">
+  <label>
+    Nombre y Apellido
+    <input formControlName="nombre" required />
+  </label>
+  <div *ngIf="form.controls.nombre.invalid && form.controls.nombre.touched" style="color:red;">Campo requerido</div>
+  <label>
+    Teléfono
+    <input formControlName="telefono" required />
+  </label>
+  <div *ngIf="form.controls.telefono.invalid && form.controls.telefono.touched" style="color:red;">Campo requerido</div>
+  <label>
+    Email
+    <input formControlName="email" required type="email" />
+  </label>
+  <div *ngIf="form.controls.email.invalid && form.controls.email.touched" style="color:red;">Email inválido</div>
+  <label>
+    Mensaje
+    <textarea formControlName="mensaje" required></textarea>
+  </label>
+  <div *ngIf="form.controls.mensaje.invalid && form.controls.mensaje.touched" style="color:red;">Campo requerido</div>
+  <button type="submit" [disabled]="form.invalid">Enviar</button>
+  <div *ngIf="success()" style="color:green;">¡Mensaje enviado!</div>
+  <div *ngIf="error()" style="color:red;">Error al enviar. Intenta de nuevo.</div>
+</form>
